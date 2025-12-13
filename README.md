@@ -84,12 +84,4 @@ npm run build
 
 - **LinkedIn:** [barzandavutciftci](https://www.linkedin.com/in/barzandavutciftci/)
 - **GitHub:** [davutciftci](https://github.com/davutciftci)
-- **Email:** davut@gmail.com
-
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-Made with ❤️ by Davut
+- **Email:** davutbciftci@gmail.com
