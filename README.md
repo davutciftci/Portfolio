@@ -51,7 +51,7 @@ src/
 
 1. Clone the repository
 ```bash
-git clone https://github.com/davutciftci/portfolio.git
+git clone https://github.com/davutciftci/Portfolio
 cd portfolio
 ```
 
@@ -64,8 +64,6 @@ npm install
 ```bash
 npm run dev
 ```
-
-4. Open [http://localhost:5173](http://localhost:5173) in your browser
 
 ### Build for Production
 
