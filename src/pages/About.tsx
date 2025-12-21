@@ -12,7 +12,6 @@ function About() {
     <section className="home">
       <div className="home-content" style={{ maxWidth: '800px' }}>
         <h1>About <span>Me</span></h1>
-        <h3>Kim Ben?</h3>
         <p style={{ marginBottom: '2rem' }}>
           Yazılım geliştirme alanında tutkulu bir Full Stack Developer'ım. Modern web teknolojileri
           ile kullanıcı dostu, ölçeklenebilir ve performanslı uygulamalar geliştirmeyi seviyorum.
