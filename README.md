@@ -65,8 +65,6 @@ npm install
 npm run dev
 ```
 
-4. Open [http://localhost:5173](http://localhost:5173) in your browser
-
 ### Build for Production
 
 ```bash
@@ -86,12 +84,4 @@ npm run build
 
 - **LinkedIn:** [barzandavutciftci](https://www.linkedin.com/in/barzandavutciftci/)
 - **GitHub:** [davutciftci](https://github.com/davutciftci)
-- **Email:** davut@gmail.com
-
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-Made with ❤️ by Davut
+- **Email:** davutbciftci@gmail.com
