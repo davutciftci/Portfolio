@@ -51,7 +51,7 @@ src/
 
 1. Clone the repository
 ```bash
-git clone https://github.com/davutciftci/portfolio.git
+git clone https://github.com/davutciftci/Portfolio
 cd portfolio
 ```
 

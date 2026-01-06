@@ -13,7 +13,10 @@ function About() {
     <section className="home">
       <div className="home-content" style={{ maxWidth: '800px' }}>
         <h1>About <span>Me</span></h1>
+<<<<<<< HEAD
         <h3>Who am I?</h3>
+=======
+>>>>>>> dfe73e9774ee611fbad81eff59536b02e5d468bc
         <p style={{ marginBottom: '2rem' }}>
           I am a passionate Full Stack Developer. I love building user-friendly, scalable, and performant applications using modern web technologies.
           My journey in the technology world has been shaped by curiosity and a desire to solve real-world problems.
