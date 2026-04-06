@@ -15,7 +15,6 @@ import { useTranslation } from 'react-i18next';
 const Calendar = GitHubCalendar as any;
 
 const defaultSkills = [
-  { name: 'React', level: 90, icon: '⚛️' },
   { name: 'TypeScript', level: 85, icon: '🔷' },
   { name: 'Node.js', level: 80, icon: '🟢' },
   { name: 'JavaScript', level: 85, icon: '🟡' },
@@ -58,9 +57,9 @@ function About() {
           const name = repo.name?.toLowerCase() || '';
           const desc = repo.description?.toLowerCase() || '';
           
-          // React
+          // React check removed as per request
           if (topics.includes('react') || name.includes('react') || desc.includes('react')) {
-            langCounts['React'] = (langCounts['React'] || 0) + 1;
+            // No longer adding to skills
           }
           
           // Express.js
@@ -74,7 +73,7 @@ function About() {
         
         const maxCount = Math.max(...counts, 1); // prevent division by zero
         
-        const desiredLangs = ['TypeScript', 'Express.js', 'JavaScript', 'React'];
+        const desiredLangs = ['TypeScript', 'Express.js', 'JavaScript'];
         
         const fetchedSkills = Object.entries(langCounts)
           .filter(([name]) => desiredLangs.includes(name))
