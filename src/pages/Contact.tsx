@@ -1,29 +1,98 @@
-
 import SocialIcons from "../components/SocialIcons"
+import SpotlightCard from "../components/reactbits/Components/SpotlightCard/SpotlightCard"
+import PageHeader from "../components/PageHeader"
+import DecryptedText from "../components/reactbits/TextAnimations/DecryptedText/DecryptedText"
+import Aurora from "../components/reactbits/Backgrounds/Aurora/Aurora"
+import { useTranslation } from 'react-i18next';
 
 function Contact() {
+  const { t } = useTranslation();
   return (
-    <section className="home">
-      <div className="home-content" style={{ maxWidth: '800px' }}>
-        <h1>Contact <span>Me</span></h1>
-        <p>You can contact me for collaboration opportunities, projects, and more.</p>
+    <section className="contact-section">
+      {/* Aurora arka plan - daha soluk */}
+      <div className="contact-aurora">
+        <Aurora
+          colorStops={['#1a9c8a', '#000000', '#ff6a00']}
+          amplitude={0.7}
+          blend={0.4}
+          speed={0.3}
+        />
+      </div>
 
-        <div style={{ marginTop: '2rem', fontSize: '1.6rem', lineHeight: '2.5' }}>
-          <p><i className="fa-solid fa-envelope" style={{ color: 'var(--primary-color)', marginRight: '1rem' }}></i>
-            <a href="mailto:davutbciftci@gmail.com" style={{ color: 'var(--text-color)' }}>davutbciftci@gmail.com</a>
-          </p>
-          <p><i className="fa-solid fa-phone" style={{ color: 'var(--primary-color)', marginRight: '1rem' }}></i>
-            <a href="tel:+905551234567" style={{ color: 'var(--text-color)' }}>+90 555 123 45 67</a>
-          </p>
-          <p style={{ color: 'var(--text-color)' }}><i className="fa-solid fa-location-dot" style={{ color: 'var(--primary-color)', marginRight: '1rem' }}></i>
-            Istanbul, Turkey
-          </p>
+      <div className="contact-content">
+        <PageHeader 
+          title={t('contact.title')} 
+          subtitle={t('contact.subtitle')} 
+          shineColor="#1a9c8a"
+          subtitleClassName="subtitle-3rem"
+        />
+
+        {/* İletişim kartları */}
+        <div className="contact-cards">
+          <SpotlightCard
+            className="contact-card"
+            spotlightColor="rgba(255, 106, 0, 0.2)"
+          >
+            <div className="contact-card-inner">
+              <div className="contact-icon-wrap">
+                <i className="fa-solid fa-envelope contact-icon"></i>
+              </div>
+              <div className="contact-info">
+                <div className="contact-label">
+                  <DecryptedText
+                    text={t('contact.email')}
+                    animateOn="view"
+                    sequential
+                    speed={50}
+                    className="decrypted-orange"
+                  />
+                </div>
+                <a href="mailto:davutbciftci@gmail.com" className="contact-link">
+                  davutbciftci@gmail.com
+                </a>
+              </div>
+            </div>
+          </SpotlightCard>
+
+          <SpotlightCard
+            className="contact-card"
+            spotlightColor="rgba(26, 156, 138, 0.2)"
+          >
+            <div className="contact-card-inner">
+              <div className="contact-icon-wrap contact-icon-teal">
+                <i className="fa-brands fa-whatsapp contact-icon"></i>
+              </div>
+              <div className="contact-info">
+                <div className="contact-label">
+                  <DecryptedText
+                    text={t('contact.phone')}
+                    animateOn="view"
+                    sequential
+                    speed={50}
+                    className="decrypted-teal"
+                  />
+                </div>
+                <a href="https://wa.me/905444112179" target="_blank" rel="noopener noreferrer" className="contact-link">
+                  +90 544 411 21 79
+                </a>
+              </div>
+            </div>
+          </SpotlightCard>
+
+          
         </div>
 
-        <SocialIcons />
+        {/* Sosyal ikonlar */}
+        <div className="contact-social">
+          <SocialIcons />
+        </div>
 
-        <div style={{ marginTop: '2rem' }}>
-          <a href="mailto:davutbciftci@gmail.com" className="btn">Send Email</a>
+        {/* CTA butonu */}
+        <div className="contact-cta">
+          <a href="mailto:davutbciftci@gmail.com" className="btn btn-primary-glow">
+            <i className="fa-solid fa-paper-plane" style={{ marginRight: '1rem' }}></i>
+            {t('contact.btnSendUrl')}
+          </a>
         </div>
       </div>
     </section>
