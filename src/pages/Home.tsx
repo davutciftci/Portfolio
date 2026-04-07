@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import SocialIcons from "../components/SocialIcons"
-import Aurora from "../components/reactbits/Backgrounds/Aurora/Aurora"
+import Particles from "../components/reactbits/Backgrounds/Particles/Particles"
+import Threads from "../components/reactbits/Animations/Threads/Threads"
 import BlurText from "../components/reactbits/TextAnimations/BlurText/BlurText"
 import TextType from "../components/reactbits/TextAnimations/TextType/TextType"
 import ShinyText from "../components/reactbits/TextAnimations/ShinyText/ShinyText"
-import MagnetLines from "../components/reactbits/Animations/MagnetLines/MagnetLines"
 import { useTranslation } from 'react-i18next';
 
 function Home() {
@@ -20,22 +20,19 @@ function Home() {
 
   const isMobile = windowWidth <= 480;
   const isTablet = windowWidth > 480 && windowWidth <= 1024;
-
-  const magnetProps = {
-    rows: isMobile ? 6 : (isTablet ? 7 : 9),
-    columns: isMobile ? 6 : (isTablet ? 7 : 9),
-    containerSize: isMobile ? "70vmin" : (isTablet ? "55vmin" : "45vmin")
-  };
   
   return (
     <section className="home home-reactbits">
-      {/* Aurora arka plan */}
+      {/* Particles arka plan (Aurora yerine) */}
       <div className="aurora-bg">
-        <Aurora
-          colorStops={['#ff6a00', '#1a1a1a', '#1a9c8a']}
-          amplitude={1.2}
-          blend={0.6}
-          speed={0.5}
+        <Particles
+          particleCount={150}
+          particleSpread={10}
+          speed={0.1}
+          particleColors={['#ff6a00', '#1a9c8a', '#ffffff']}
+          moveParticlesOnHover={false}
+          alphaParticles={true}
+          particleBaseSize={100}
         />
       </div>
 
@@ -95,18 +92,25 @@ function Home() {
         </div>
       </div>
 
-      {/* Sağ taraf - MagnetLines dekoratif */}
+      {/* Sağ taraf - MagnetLines dekoratif (Sadece Desktop) / Particles (Mobil & Tablet) */}
       <div className="home-visual">
-        <MagnetLines
-          rows={magnetProps.rows}
-          columns={magnetProps.columns}
-          containerSize={magnetProps.containerSize}
-          lineColor="#ff6a00"
-          lineWidth="0.4vmin"
-          lineHeight="4vmin"
-          baseAngle={-15}
-          className="home-magnet"
-        />
+        {isMobile || isTablet ? (
+          <Threads 
+            color="#ff6a00"
+            count={15}
+            speed={0.8}
+            maxDistance={120}
+            className="home-threads-mobile"
+          />
+        ) : (
+          <Threads 
+            color="#ff6a00"
+            count={35}
+            speed={1.2}
+            maxDistance={180}
+            className="home-threads-desktop"
+          />
+        )}
       </div>
     </section>
   )

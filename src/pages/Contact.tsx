@@ -2,20 +2,21 @@ import SocialIcons from "../components/SocialIcons"
 import SpotlightCard from "../components/reactbits/Components/SpotlightCard/SpotlightCard"
 import PageHeader from "../components/PageHeader"
 import DecryptedText from "../components/reactbits/TextAnimations/DecryptedText/DecryptedText"
-import Aurora from "../components/reactbits/Backgrounds/Aurora/Aurora"
+import Particles from "../components/reactbits/Backgrounds/Particles/Particles"
 import { useTranslation } from 'react-i18next';
 
 function Contact() {
   const { t } = useTranslation();
   return (
     <section className="contact-section">
-      {/* Aurora arka plan - daha soluk */}
-      <div className="contact-aurora">
-        <Aurora
-          colorStops={['#1a9c8a', '#000000', '#ff6a00']}
-          amplitude={0.7}
-          blend={0.4}
-          speed={0.3}
+      {/* Particles arka plan (Aurora yerine) */}
+      <div className="aurora-bg">
+        <Particles
+          particleCount={120}
+          particleColors={['#1a9c8a', '#ff6a00', '#ffffff']}
+          moveParticlesOnHover={false}
+          alphaParticles={true}
+          particleBaseSize={90}
         />
       </div>
 

@@ -1,6 +1,6 @@
 import SpotlightCard from "../components/reactbits/Components/SpotlightCard/SpotlightCard"
 import PageHeader from "../components/PageHeader"
-import Aurora from "../components/reactbits/Backgrounds/Aurora/Aurora"
+import Particles from "../components/reactbits/Backgrounds/Particles/Particles"
 import AnimatedContent from "../components/reactbits/Animations/AnimatedContent/AnimatedContent"
 import DecryptedText from "../components/reactbits/TextAnimations/DecryptedText/DecryptedText"
 import { useTranslation } from 'react-i18next';
@@ -55,12 +55,14 @@ function Services() {
 
   return (
     <section className="services-section">
-      <div className="services-aurora">
-        <Aurora
-          colorStops={['#1a9c8a', '#050505', '#ff6a00']}
-          amplitude={0.9}
-          blend={0.5}
-          speed={0.4}
+      {/* Particles arka plan (Aurora yerine) */}
+      <div className="aurora-bg">
+        <Particles
+          particleCount={100}
+          particleColors={['#ff6a00', '#1a9c8a', '#ffffff']}
+          moveParticlesOnHover={false}
+          alphaParticles={true}
+          particleBaseSize={80}
         />
       </div>
 
