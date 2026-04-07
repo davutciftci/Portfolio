@@ -12,11 +12,12 @@ function Contact() {
       {/* Particles arka plan (Aurora yerine) */}
       <div className="aurora-bg">
         <Particles
-          particleCount={120}
-          particleColors={['#1a9c8a', '#ff6a00', '#ffffff']}
+          particleCount={150}
+          particleColors={['#ff6a00', '#1a9c8a', '#ffffff']}
           moveParticlesOnHover={false}
           alphaParticles={true}
-          particleBaseSize={90}
+          particleBaseSize={100}
+          speed={0.1}
         />
       </div>
 

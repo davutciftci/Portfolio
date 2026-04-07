@@ -45,15 +45,12 @@
 [data-theme="light"] .services-section,
 [data-theme="light"] .contact-section {
     background-color: var(--bg-color) !important;
+    position: relative;
+    overflow: hidden;
 }
 
-[data-theme="light"] .aurora-bg,
-[data-theme="light"] .contact-aurora {
+[data-theme="light"] .aurora-bg {
     opacity: 0.35;
-}
-
-[data-theme="light"] .about-particles {
-    opacity: 0.6;
 }
 
 [data-theme="light"] .card-spotlight {
@@ -83,6 +80,17 @@
 [data-theme="light"] .navbar a:hover,
 [data-theme="light"] .navbar a.active {
     color: var(--primary-color);
+}
+
+/* GitHub Calendar Text Color Fix for Light Theme */
+[data-theme="light"] .react-activity-calendar text,
+[data-theme="light"] .react-github-calendar text,
+[data-theme="light"] .react-activity-calendar__footer,
+[data-theme="light"] .react-activity-calendar__legend,
+[data-theme="light"] .react-activity-calendar__count {
+    fill: #24292f !important;
+    color: #24292f !important;
+    font-weight: 500;
 }
 
 /* ===== Reset & Base ===== */
@@ -468,11 +476,7 @@ header.header.scrolled {
 }
 
 .about-particles {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    opacity: 0.35;
-    pointer-events: none;
+    display: none;
 }
 
 .about-particles canvas {
@@ -788,11 +792,7 @@ header.header.scrolled {
 }
 
 .contact-aurora {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    opacity: 0.4;
-    pointer-events: none;
+    display: none;
 }
 
 .contact-aurora canvas {
@@ -944,11 +944,7 @@ a.contact-link:hover {
 }
 
 .services-aurora {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    opacity: 0.3;
-    pointer-events: none;
+    display: none;
 }
 
 .services-aurora canvas {
@@ -1050,10 +1046,7 @@ a.contact-link:hover {
     font-weight: 500;
 }
 
-/* Light Tema Özel Düzeltmeler for Services */
-[data-theme="light"] .services-aurora {
-    opacity: 0.2;
-}
+/* Removed specific aurora overrides as they are now handled by .aurora-bg */
 
 [data-theme="light"] .service-card:hover {
     border-color: var(--primary-color) !important;
@@ -1072,8 +1065,8 @@ a.contact-link:hover {
 }
 
 [data-theme="light"] .footer-modern {
-    background: linear-gradient(to top, rgba(240, 242, 245, 0.95), transparent);
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-subtle);
 }
 
 .footer-modern::before {
@@ -1109,7 +1102,7 @@ a.contact-link:hover {
 }
 
 .footer-logo a {
-    color: var(--text-color);
+    color: var(--text-color) !important;
 }
 
 .footer-hl {

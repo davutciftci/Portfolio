@@ -30,6 +30,23 @@ const techStack = [
 function About() {
   const { t } = useTranslation();
   const [skills, setSkills] = useState(defaultSkills);
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+
+  useEffect(() => {
+    // Tema değişikliğini takip et
+    const updateTheme = () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme') as 'light' | 'dark' || 'dark';
+      setTheme(currentTheme);
+    };
+
+    updateTheme(); // İlk yüklemede kontrol et
+
+    // HTML üzerindeki attribute değişimini izlemek için MutationObserver kullan
+    const observer = new MutationObserver(updateTheme);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+    return () => observer.disconnect();
+  }, []);
 
   const timeline = [
     { title: t('about.timeline_fullstack'), icon: '💻', desc: t('about.timeline_fullstack_desc') },
@@ -102,15 +119,14 @@ function About() {
   return (
     <section className="about-section">
       {/* Particles arka plan */}
-      <div className="about-particles">
+      <div className="aurora-bg">
         <Particles
-          particleCount={120}
-          particleSpread={8}
-          speed={0.05}
+          particleCount={150}
           particleColors={['#ff6a00', '#1a9c8a', '#ffffff']}
-          alphaParticles
-          particleBaseSize={80}
-          disableRotation={false}
+          moveParticlesOnHover={false}
+          alphaParticles={true}
+          particleBaseSize={100}
+          speed={0.1}
         />
       </div>
 
@@ -124,14 +140,30 @@ function About() {
         />
 
         {/* GitHub Calendar (Commit Gösterge Paneli) */}
-        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '4rem', padding: '1rem', background: 'var(--bg-card)', border: '1px solid var(--border-subtle)', borderRadius: '1.6rem', backdropFilter: 'blur(20px)' }}>
-           <div style={{ maxWidth: '100%', overflowX: 'auto', padding: '1rem' }}>
+        <div style={{ 
+          display: 'flex', 
+          justifyContent: 'center', 
+          marginBottom: '4rem', 
+          padding: '1.5rem', 
+          background: theme === 'light' ? '#ffffff' : 'var(--bg-card)', 
+          border: theme === 'light' ? '1px solid #d1d5db' : '1px solid var(--border-color)', 
+          borderRadius: '1.6rem', 
+          backdropFilter: theme === 'light' ? 'none' : 'blur(20px)',
+          boxShadow: theme === 'light' ? '0 10px 40px rgba(0,0,0,0.08)' : 'none',
+          transition: 'all 0.3s ease'
+        }}>
+           <div style={{ maxWidth: '100%', overflowX: 'auto', padding: '0.5rem' }}>
               <Calendar 
                 username="davutciftci" 
-                colorScheme="dark" 
+                colorScheme={theme} 
+                blockSize={14}
+                blockMargin={5}
                 theme={{
-                  light: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'],
+                  light: ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39'],
                   dark: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'],
+                }}
+                labels={{
+                  totalCount: '{{count}} contributions in the last year',
                 }}
               />
            </div>

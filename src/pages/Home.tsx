@@ -27,12 +27,11 @@ function Home() {
       <div className="aurora-bg">
         <Particles
           particleCount={150}
-          particleSpread={10}
-          speed={0.1}
           particleColors={['#ff6a00', '#1a9c8a', '#ffffff']}
           moveParticlesOnHover={false}
           alphaParticles={true}
           particleBaseSize={100}
+          speed={0.1}
         />
       </div>
 

@@ -7,7 +7,7 @@ export default {
   },
   home: {
     greeting: "Hi, I'm Davut",
-    subtitle: "Full Stack Developer & Problem Solver",
+    subtitle: "Full Stack Developer",
     role_1: "Hi, I'm Davut.",
     role_2: "I am a Software Developer.",
     role_3: "I am a Psychologist.",

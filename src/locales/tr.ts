@@ -7,7 +7,7 @@ export default {
   },
   home: {
     greeting: "Merhaba, Ben Davut",
-    subtitle: "Full Stack Geliştirici & Problem Çözücü",
+    subtitle: "Full Stack Geliştirici",
     role_1: "Merhaba, Ben Davut.",
     role_2: "Yazılım Geliştiricisiyim.",
     role_3: "Psikoloğum.",

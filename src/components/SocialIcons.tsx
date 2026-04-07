@@ -7,7 +7,7 @@ function SocialIcons() {
             <a href="https://github.com/davutciftci" target="_blank" rel="noopener noreferrer">
                 <i className="fa-brands fa-github"></i>
             </a>
-            <a href="https://medium.com/@davutciftci" target="_blank" rel="noopener noreferrer">
+            <a href="https://medium.com/@davutciftci" target="_blank" rel="noopener noreferrer" title="Medium">
                 <i className="fa-brands fa-medium"></i>
             </a>
         </div>

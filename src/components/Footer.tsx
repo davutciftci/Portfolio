@@ -1,9 +1,24 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ShinyText from './reactbits/TextAnimations/ShinyText/ShinyText';
 import { useTranslation } from 'react-i18next';
 
 function Footer() {
     const { t } = useTranslation();
+    const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+
+    useEffect(() => {
+        const updateTheme = () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme') as 'light' | 'dark' || 'dark';
+            setTheme(currentTheme);
+        };
+
+        updateTheme();
+        const observer = new MutationObserver(updateTheme);
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+        return () => observer.disconnect();
+    }, []);
+
     const scrollToTop = (e: React.MouseEvent) => {
         e.preventDefault();
         window.scrollTo({
@@ -11,6 +26,8 @@ function Footer() {
             behavior: 'smooth'
         });
     };
+
+    const isLight = theme === 'light';
 
     return (
         <footer className="footer-modern">
@@ -25,7 +42,9 @@ function Footer() {
                             text={t('footer.copyright')} 
                             disabled={false} 
                             speed={3} 
-                            className="shiny-footer-text" 
+                            className="shiny-footer-text"
+                            color={isLight ? "#4b5563" : "#b5b5b5"}
+                            shineColor={isLight ? "#000000" : "#ffffff"}
                         />
                     </p>
                 </div>

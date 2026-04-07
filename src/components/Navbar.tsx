@@ -20,19 +20,35 @@ function Navbar() {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
             
-            // Eğer 150px'den fazla aşağı inildiyse ve aşağı kaydırılıyorsa gizle
+            // Aşağı kaydırırken belirli bir mesafe geçildiyse gizle
             if (currentScrollY > 150 && currentScrollY > lastScrollY) {
                 setIsScrolled(true);
-            } else if (currentScrollY <= 50 || currentScrollY < lastScrollY) {
-                // Yukarı kaydırılıyorsa veya en üstteysek (ilk 50px) göster
+            } 
+            // Yukarı kaydırırken ve Navbar'a yaklaşıldığında (üst 400px) göster
+            else if (currentScrollY < lastScrollY && currentScrollY < 400) {
+                setIsScrolled(false);
+            }
+            // En tepedeysen her zaman göster
+            if (currentScrollY < 50) {
                 setIsScrolled(false);
             }
             
             lastScrollY = currentScrollY;
         };
+
+        const handleMouseMove = (e: MouseEvent) => {
+            // Fare ekranın en üstüne yaklaştığında (Navbar'a yakınlaşınca) göster
+            if (e.clientY < 60) {
+                setIsScrolled(false);
+            }
+        };
         
         window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
+        window.addEventListener('mousemove', handleMouseMove);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('mousemove', handleMouseMove);
+        };
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     const toggleTheme = () => {
