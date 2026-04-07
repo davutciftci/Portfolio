@@ -59,5 +59,25 @@ export default {
   footer: {
     copyright: "Copyright © 2026 by Davut Barzan Ciftci | All Rights Reserved.",
     backToTop: "Scroll to Top"
+  },
+  seo: {
+    defaultDescription: "Davut Çiftçi - Full-stack Developer & Sign Language Counselor Portfolio. Modern web solutions and professional counselor services.",
+    defaultKeywords: "Davut Çiftçi, Portfolio, Full-stack Developer, Sign Language, React, TypeScript, Web Development",
+    home: {
+      title: "Home",
+      description: "Welcome to Davut Çiftçi's professional portfolio. Discover my software development projects and counseling services."
+    },
+    about: {
+      title: "About Me",
+      description: "Learn more about Davut Çiftçi's background, skills, and experience in full-stack development and psychology."
+    },
+    services: {
+      title: "Services",
+      description: "Explore the professional services offered by Davut Çiftçi, including web development, e-commerce, and full-stack solutions."
+    },
+    contact: {
+      title: "Contact",
+      description: "Get in touch with Davut Çiftçi for collaboration, projects, or professional counseling inquiries."
+    }
   }
 };

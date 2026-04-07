@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { FaArrowUp } from 'react-icons/fa6';
 import ShinyText from './reactbits/TextAnimations/ShinyText/ShinyText';
 import { useTranslation } from 'react-i18next';
 
@@ -50,7 +51,7 @@ function Footer() {
                 </div>
 
                 <div className="footer-iconTop" onClick={scrollToTop} title={t('footer.backToTop')}>
-                    <i className="fa-solid fa-arrow-up"></i>
+                    <FaArrowUp aria-hidden />
                 </div>
             </div>
         </footer>

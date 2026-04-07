@@ -2,24 +2,22 @@ import SocialIcons from "../components/SocialIcons"
 import SpotlightCard from "../components/reactbits/Components/SpotlightCard/SpotlightCard"
 import PageHeader from "../components/PageHeader"
 import DecryptedText from "../components/reactbits/TextAnimations/DecryptedText/DecryptedText"
-import Particles from "../components/reactbits/Backgrounds/Particles/Particles"
+import ParticlesBackdrop from "../components/ParticlesBackdrop"
+import { FaEnvelope, FaWhatsapp, FaPaperPlane } from "react-icons/fa6"
 import { useTranslation } from 'react-i18next';
+import SEO from "../components/SEO"
+import { useDeferredEffects } from "../hooks/useDeferredEffects"
 
 function Contact() {
   const { t } = useTranslation();
+  const showParticles = useDeferredEffects();
   return (
     <section className="contact-section">
-      {/* Particles arka plan (Aurora yerine) */}
-      <div className="aurora-bg">
-        <Particles
-          particleCount={150}
-          particleColors={['#ff6a00', '#1a9c8a', '#ffffff']}
-          moveParticlesOnHover={false}
-          alphaParticles={true}
-          particleBaseSize={100}
-          speed={0.1}
-        />
-      </div>
+      <SEO 
+        title={t('seo.contact.title')} 
+        description={t('seo.contact.description')} 
+      />
+      <ParticlesBackdrop enabled={showParticles} />
 
       <div className="contact-content">
         <PageHeader 
@@ -37,7 +35,7 @@ function Contact() {
           >
             <div className="contact-card-inner">
               <div className="contact-icon-wrap">
-                <i className="fa-solid fa-envelope contact-icon"></i>
+                <FaEnvelope className="contact-icon" aria-hidden />
               </div>
               <div className="contact-info">
                 <div className="contact-label">
@@ -62,7 +60,7 @@ function Contact() {
           >
             <div className="contact-card-inner">
               <div className="contact-icon-wrap contact-icon-teal">
-                <i className="fa-brands fa-whatsapp contact-icon"></i>
+                <FaWhatsapp className="contact-icon" aria-hidden />
               </div>
               <div className="contact-info">
                 <div className="contact-label">
@@ -92,7 +90,7 @@ function Contact() {
         {/* CTA butonu */}
         <div className="contact-cta">
           <a href="mailto:davutbciftci@gmail.com" className="btn btn-primary-glow">
-            <i className="fa-solid fa-paper-plane" style={{ marginRight: '1rem' }}></i>
+            <FaPaperPlane style={{ marginRight: '1rem' }} aria-hidden />
             {t('contact.btnSendUrl')}
           </a>
         </div>

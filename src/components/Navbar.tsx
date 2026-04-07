@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { CiLight, CiDark } from 'react-icons/ci';
+import { FaBars, FaXmark } from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
 
 function Navbar() {
@@ -75,7 +76,7 @@ function Navbar() {
             <Link to="/" className="logo" onClick={closeMenu}>D<span>C</span></Link>
 
             <div className={`bx bx-menu ${isOpen ? 'bx-x' : ''}`} id="menu-icon" onClick={toggleMenu}>
-                <i className={`fa-solid ${isOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
+                {isOpen ? <FaXmark aria-hidden /> : <FaBars aria-hidden />}
             </div>
 
             <nav className={`navbar ${isOpen ? 'active' : ''}`}>

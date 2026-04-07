@@ -59,5 +59,25 @@ export default {
   footer: {
     copyright: "Telif Hakkı © 2026 Davut Barzan Çiftçi | Tüm Hakları Saklıdır.",
     backToTop: "Yukarı Çık"
+  },
+  seo: {
+    defaultDescription: "Davut Çiftçi - Full-stack Geliştirici & İşaret Dili Danışmanı Portfolyosu. Modern web çözümleri ve profesyonel danışmanlık hizmetleri.",
+    defaultKeywords: "Davut Çiftçi, Portfolyo, Full-stack Geliştirici, İşaret Dili, React, TypeScript, Web Geliştirme",
+    home: {
+      title: "Ana Sayfa",
+      description: "Davut Çiftçi'nin profesyonel portfolyosuna hoş geldiniz. Yazılım geliştirme projelerimi ve danışmanlık hizmetlerimi keşfedin."
+    },
+    about: {
+      title: "Hakkımda",
+      description: "Davut Çiftçi'nin geçmişi, yetenekleri ve full-stack geliştirme ile psikoloji alanındaki deneyimleri hakkında daha fazla bilgi edinin."
+    },
+    services: {
+      title: "Hizmetler",
+      description: "Davut Çiftçi tarafından sunulan web geliştirme, e-ticaret ve full-stack çözümler gibi profesyonel hizmetleri keşfedin."
+    },
+    contact: {
+      title: "İletişim",
+      description: "İş birliği, projeler veya profesyonel danışmanlık talepleriniz için Davut Çiftçi ile iletişime geçin."
+    }
   }
 };

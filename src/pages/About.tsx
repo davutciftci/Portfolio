@@ -6,9 +6,11 @@ import AnimatedTechStack from "../components/AnimatedTechStack"
 import ShinyText from "../components/reactbits/TextAnimations/ShinyText/ShinyText"
 import DecryptedText from "../components/reactbits/TextAnimations/DecryptedText/DecryptedText"
 import TextType from "../components/reactbits/TextAnimations/TextType/TextType"
-import Particles from "../components/reactbits/Backgrounds/Particles/Particles"
+import ParticlesBackdrop from "../components/ParticlesBackdrop"
 import { GitHubCalendar } from 'react-github-calendar';
 import { useTranslation } from 'react-i18next';
+import SEO from "../components/SEO"
+import { useDeferredEffects } from "../hooks/useDeferredEffects"
 
 // Handle React 19 JSX Type mismatch
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -29,6 +31,7 @@ const techStack = [
 
 function About() {
   const { t } = useTranslation();
+  const showParticles = useDeferredEffects();
   const [skills, setSkills] = useState(defaultSkills);
   const [theme, setTheme] = useState<'light' | 'dark'>('dark');
 
@@ -118,17 +121,11 @@ function About() {
 
   return (
     <section className="about-section">
-      {/* Particles arka plan */}
-      <div className="aurora-bg">
-        <Particles
-          particleCount={150}
-          particleColors={['#ff6a00', '#1a9c8a', '#ffffff']}
-          moveParticlesOnHover={false}
-          alphaParticles={true}
-          particleBaseSize={100}
-          speed={0.1}
-        />
-      </div>
+      <SEO 
+        title={t('seo.about.title')} 
+        description={t('seo.about.description')} 
+      />
+      <ParticlesBackdrop enabled={showParticles} />
 
       <div className="about-content">
         {/* Başlık */}
