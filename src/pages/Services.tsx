@@ -4,6 +4,7 @@ import Aurora from "../components/reactbits/Backgrounds/Aurora/Aurora"
 import AnimatedContent from "../components/reactbits/Animations/AnimatedContent/AnimatedContent"
 import DecryptedText from "../components/reactbits/TextAnimations/DecryptedText/DecryptedText"
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 type Service = {
   id: number;
@@ -111,10 +112,10 @@ function Services() {
         <div className="services-cta">
           <AnimatedContent distance={50} direction="vertical" delay={0.6}>
             <p className="services-cta-text">{t('services.ctaText')}</p>
-            <a href="/contact" className="btn btn-primary-glow">
+            <Link to="/contact" className="btn btn-primary-glow">
               <i className="fa-solid fa-rocket" style={{ marginRight: '1rem' }}></i>
               {t('services.ctaBtn')}
-            </a>
+            </Link>
           </AnimatedContent>
         </div>
       </div>
