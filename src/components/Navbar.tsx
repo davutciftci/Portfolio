@@ -20,11 +20,11 @@ function Navbar() {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
             
-            // Eğer 100px'den fazla aşağı inildiyse ve aşağı kaydırılıyorsa gizle
-            if (currentScrollY > 100 && currentScrollY > lastScrollY) {
+            // Eğer 150px'den fazla aşağı inildiyse ve aşağı kaydırılıyorsa gizle
+            if (currentScrollY > 150 && currentScrollY > lastScrollY) {
                 setIsScrolled(true);
-            } else {
-                // Yukarı kaydırılıyorsa veya en üstteysek göster
+            } else if (currentScrollY <= 50 || currentScrollY < lastScrollY) {
+                // Yukarı kaydırılıyorsa veya en üstteysek (ilk 50px) göster
                 setIsScrolled(false);
             }
             
