@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import SocialIcons from "../components/SocialIcons"
 import Aurora from "../components/reactbits/Backgrounds/Aurora/Aurora"
@@ -9,6 +10,22 @@ import { useTranslation } from 'react-i18next';
 
 function Home() {
   const { t } = useTranslation();
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const isMobile = windowWidth <= 480;
+  const isTablet = windowWidth > 480 && windowWidth <= 1024;
+
+  const magnetProps = {
+    rows: isMobile ? 6 : (isTablet ? 7 : 9),
+    columns: isMobile ? 6 : (isTablet ? 7 : 9),
+    containerSize: isMobile ? "70vmin" : (isTablet ? "55vmin" : "45vmin")
+  };
   
   return (
     <section className="home home-reactbits">
@@ -81,9 +98,9 @@ function Home() {
       {/* Sağ taraf - MagnetLines dekoratif */}
       <div className="home-visual">
         <MagnetLines
-          rows={9}
-          columns={9}
-          containerSize="45vmin"
+          rows={magnetProps.rows}
+          columns={magnetProps.columns}
+          containerSize={magnetProps.containerSize}
           lineColor="#ff6a00"
           lineWidth="0.4vmin"
           lineHeight="4vmin"

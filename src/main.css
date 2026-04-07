@@ -1162,7 +1162,6 @@ a.contact-link:hover {
 
     .home-magnet {
         opacity: 0.85;
-        transform: scale(1.0); /* Reduced default scale from 1.2 to 1.0 */
     }
 
     .about-bio-row {
@@ -1255,9 +1254,6 @@ a.contact-link:hover {
         margin: 2rem 0 6rem;
     }
 
-    .home-magnet {
-        transform: scale(0.8); /* Even smaller on mobile */
-    }
 }
 
 @media (max-width: 375px) {
@@ -1276,7 +1272,4 @@ a.contact-link:hover {
         font-size: 3.8rem !important;
     }
 
-    .home-magnet {
-        transform: scale(0.65);
-    }
 }
