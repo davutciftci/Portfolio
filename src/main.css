@@ -40,6 +40,13 @@
 }
 
 /* Light Tema Özel Düzeltmeler */
+[data-theme="light"] .home-reactbits,
+[data-theme="light"] .about-section,
+[data-theme="light"] .services-section,
+[data-theme="light"] .contact-section {
+    background-color: var(--bg-color) !important;
+}
+
 [data-theme="light"] .aurora-bg,
 [data-theme="light"] .contact-aurora {
     opacity: 0.35;
@@ -182,6 +189,20 @@ header.header.scrolled {
 
 .logo:hover {
     text-shadow: 0 0 20px var(--primary-glow);
+}
+
+.home-cta {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    z-index: 2;
+    position: relative;
+}
+
+.home-cta .btn {
+    min-width: 180px; /* Harmonize button widths */
+    height: 52px;     /* Harmonize button heights */
 }
 
 .navbar {
@@ -420,6 +441,19 @@ header.header.scrolled {
     opacity: 0.75;
     z-index: 1;
     display: block;
+}
+
+.home-squares-mobile {
+    width: min(90vw, 500px);
+    height: 350px;
+    border-radius: 2rem;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-card);
+    mask-image: linear-gradient(to bottom, black 80%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent);
 }
 
 /* =============================================
@@ -1128,8 +1162,8 @@ a.contact-link:hover {
 @media (max-width: 1024px) {
     .home-reactbits {
         flex-direction: column;
-        align-items: flex-start;
-        padding: 12rem 6% 18rem; /* Increased further to 14rem as requested */
+        align-items: center;
+        padding: 10rem 6% 4rem;
         text-align: center;
         gap: 2rem;
     }
@@ -1157,7 +1191,9 @@ a.contact-link:hover {
     .home-visual {
         width: 100%;
         justify-content: center;
-        margin: 4rem 0 10rem; /* Increased margin-bottom to 10rem */
+        margin: 2rem 0 2rem; 
+        display: flex;
+        align-items: center;
     }
 
     .home-magnet {
