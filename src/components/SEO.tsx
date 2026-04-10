@@ -27,6 +27,11 @@ const SEO = ({
 
   return (
     <Helmet>
+      {/* Favicons */}
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <link rel="icon" type="image/png" href="/favicon.png" />
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
       {/* Standard metadata tags */}
       <title>{fullTitle}</title>
       <meta name="description" content={metaDescription} />
