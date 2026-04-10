@@ -58,17 +58,17 @@ function Home() {
             {isMobile || isTablet ? (
               <Threads
                 color="#ff6a00"
-                count={15}
-                speed={0.8}
-                maxDistance={120}
+                count={5}
+                speed={0.6}
+                maxDistance={100}
                 className="home-threads-mobile"
               />
             ) : (
               <Threads
                 color="#ff6a00"
-                count={35}
-                speed={1.2}
-                maxDistance={180}
+                count={15}
+                speed={0.8}
+                maxDistance={150}
                 className="home-threads-desktop"
               />
             )}

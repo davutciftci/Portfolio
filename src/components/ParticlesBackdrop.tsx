@@ -3,7 +3,7 @@ import { lazy, Suspense } from 'react'
 const Particles = lazy(() => import('./reactbits/Backgrounds/Particles/Particles'))
 
 const defaultProps = {
-  particleCount: 150,
+  particleCount: 40,
   particleColors: ['#ff6a00', '#1a9c8a', '#ffffff'] as string[],
   moveParticlesOnHover: false,
   alphaParticles: true,
