@@ -68,6 +68,11 @@ function Navbar() {
     };
 
     const isActive = (path: string) => {
+        if (path === '/projects') {
+            return location.pathname === '/projects' || location.pathname.startsWith('/projects/')
+                ? 'active'
+                : '';
+        }
         return location.pathname === path ? 'active' : '';
     };
 
@@ -83,6 +88,7 @@ function Navbar() {
                 <Link to="/" className={isActive('/')} onClick={closeMenu}>{t('navbar.home')}</Link>
                 <Link to="/about" className={isActive('/about')} onClick={closeMenu}>{t('navbar.about')}</Link>
                 <Link to="/services" className={isActive('/services')} onClick={closeMenu}>{t('navbar.services')}</Link>
+                <Link to="/projects" className={isActive('/projects')} onClick={closeMenu}>{t('navbar.projects')}</Link>
                 <Link to="/contact" className={isActive('/contact')} onClick={closeMenu}>{t('navbar.contact')}</Link>
                 <div style={{ display: 'flex', alignItems: 'center', marginLeft: '1rem' }}>
                     <button

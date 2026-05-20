@@ -6,6 +6,10 @@ const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Services = lazy(() => import("./pages/Services"));
+const Projects = lazy(() => import("./pages/Projects"));
+const FeedoProject = lazy(() => import("./pages/FeedoProject"));
+const FeedoKvkDisclosure = lazy(() => import("./pages/FeedoKvkDisclosure"));
+const FeedoPrivacyPolicy = lazy(() => import("./pages/FeedoPrivacyPolicy"));
 const ErrorPage = lazy(() => import("./pages/Error"));
 
 export const router = createBrowserRouter([
@@ -29,6 +33,22 @@ export const router = createBrowserRouter([
             {
                 path: "services",
                 element: <Services />,
+            },
+            {
+                path: "projects",
+                element: <Projects />,
+            },
+            {
+                path: "projects/feedo",
+                element: <FeedoProject />,
+            },
+            {
+                path: "projects/feedo/kvk-disclosure",
+                element: <FeedoKvkDisclosure />,
+            },
+            {
+                path: "projects/feedo/privacy-policy",
+                element: <FeedoPrivacyPolicy />,
             },
         ],
     },

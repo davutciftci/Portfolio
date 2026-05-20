@@ -3,6 +3,7 @@ export default {
     home: "Home",
     about: "About",
     services: "Services",
+    projects: "My Projects",
     contact: "Contact"
   },
   home: {
@@ -49,6 +50,106 @@ export default {
     ctaText: "Have a specific project in mind?",
     ctaBtn: "Let's Discuss"
   },
+  projects: {
+    title: "My Projects",
+    subtitle: "Selected product and platform work",
+    feedoCardTitle: "Feedo — Livestock farm management",
+    feedoCardDesc:
+      "A multi-tenant farm management product that unifies animals, flocks, and day-to-day operational records for small and large livestock operations in one app.",
+    feedoCardAria: "Open Feedo project details",
+    viewDetails: "View details"
+  },
+  feedo: {
+    logoAlt: "Feedo wordmark",
+    backToProjects: "Back to projects",
+    pageTitle: "Feedo",
+    pageSubtitle: "Feedo Farm Management",
+    intro:
+      "Feedo is a farm management product for livestock operations. It brings animals, flocks, and day-to-day operational records into one mobile app, backed by a multi-tenant API. Data stays tenant-scoped, with notification and alarm infrastructure for critical dates and compliance-style reminders.",
+    sections: {
+      identity: {
+        title: "Identity and movements (animals & flocks)",
+        body:
+          "Animal profiles, flock definitions, detail views, and a lineage visualization. Animal and flock movement concepts are supported in the data model."
+      },
+      earTag: {
+        title: "Ear tag scanning",
+        body:
+          "Barcode/QR scanning for quick identification and faster in-field workflows."
+      },
+      reproduction: {
+        title: "Reproduction and births",
+        body:
+          "Breeding records, birth forms, and expected-birth workflows, including reminders for post-birth official reporting where applicable."
+      },
+      ration: {
+        title: "Ration and feeding",
+        body:
+          "Daily feed entries per animal or flock, summaries, and FCR/trend-style insights; flock feeding can be tied to barn-period context."
+      },
+      health: {
+        title: "Health",
+        body:
+          "Treatments, vaccinations (with templates), and health observations to document care and veterinary follow-up."
+      },
+      productivity: {
+        title: "Productivity",
+        body:
+          "Production metrics such as eggs, tracked in animal/flock context (e.g. flock productivity)."
+      },
+      shearing: {
+        title: "Shearing",
+        body:
+          "Shearing session records, including data that can feed financial reporting (e.g. sale proceeds)."
+      },
+      financial: {
+        title: "Financial management",
+        body:
+          "Income and expense lines, year-over-year views, and per-animal profitability, linked to the farm and, where applicable, to animals/flocks."
+      },
+      reports: {
+        title: "Reports and charts",
+        body:
+          "Yield/production charts and a reports hub that ties financial and production views together."
+      },
+      homeOps: {
+        title: "Home and operations",
+        body:
+          "Dashboard summaries, farm alarms (e.g. due dates, regulatory birth reminders), and space/capacity planning."
+      },
+      account: {
+        title: "Account, subscription, and notifications",
+        body:
+          "Authentication, profile, subscription/plan management, push device registration, and alarm-driven alerts."
+      },
+      offline: {
+        title: "Offline and reliability",
+        body:
+          "Offline-first patterns (outbox/sync), error boundaries, and observability (e.g. error reporting in production) for real-world field use."
+      },
+      i18n: {
+        title: "Internationalization",
+        body:
+          "The UI is built for Turkish and English (i18n)."
+      }
+    },
+    legal: {
+      sectionTitle: "Legal notices (Feedo)",
+      kvkCardTitle: "KVKK disclosure — Feedo",
+      kvkCardDesc:
+        "Information notice under Law No. 6698 on how personal data are processed in the Feedo app.",
+      privacyCardTitle: "Privacy policy — Feedo",
+      privacyCardDesc:
+        "Principles for personal data, security, retention, and your rights in connection with Feedo.",
+      openDocument: "Open page →",
+      backToFeedo: "Back to Feedo project",
+      kvkLinkAria: "Open KVKK disclosure for Feedo",
+      privacyLinkAria: "Open privacy policy for Feedo",
+      seePrivacy: "Privacy policy — Feedo",
+      seeKvk: "KVKK disclosure — Feedo",
+      relatedLabel: "Related legal page"
+    }
+  },
   contact: {
     title: "Contact Me",
     subtitle: "Let's Contact Me",
@@ -78,6 +179,25 @@ export default {
     contact: {
       title: "Contact",
       description: "Get in touch with Davut Çiftçi for collaboration, projects, or professional counseling inquiries."
+    },
+    projects: {
+      title: "My Projects",
+      description: "Product and platform projects by Davut Çiftçi, including Feedo farm management."
+    },
+    feedo: {
+      title: "Feedo",
+      description:
+        "Feedo farm management: animal and flock identity, health, feeding, reproduction, finance, reports, and offline field use.",
+      kvkDisclosure: {
+        title: "Feedo — KVKK disclosure",
+        description:
+          "Personal data disclosure under Turkish Law No. 6698 (KVKK) for the Feedo mobile app.",
+      },
+      privacyPolicy: {
+        title: "Feedo — Privacy policy",
+        description:
+          "Personal data protection and privacy policy for the Feedo mobile application.",
+      },
     }
   }
 };

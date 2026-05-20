@@ -42,6 +42,9 @@
 [data-theme="light"] .home-reactbits,
 [data-theme="light"] .about-section,
 [data-theme="light"] .services-section,
+[data-theme="light"] .projects-section,
+[data-theme="light"] .feedo-detail-section,
+[data-theme="light"] .feedo-legal-section,
 [data-theme="light"] .contact-section {
     background-color: var(--bg-color) !important;
     position: relative;
@@ -1052,6 +1055,395 @@ a.contact-link:hover {
 }
 
 /* =============================================
+   PROJECTS & FEEDO DETAIL
+   ============================================= */
+.projects-subtitle {
+    font-size: 3rem !important;
+    font-weight: 500 !important;
+}
+
+@media (max-width: 768px) {
+    .projects-subtitle {
+        font-size: 2.4rem !important;
+    }
+}
+
+.projects-section {
+    position: relative;
+    min-height: 100vh;
+    padding: 10rem 8% 6rem;
+    overflow: hidden;
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.projects-grid--single {
+    max-width: 44rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.project-card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    border-radius: 1.6rem;
+    height: 100%;
+}
+
+.project-card-link:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
+}
+
+.project-list-card {
+    height: 100% !important;
+}
+
+.project-feedo-heading-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.project-feedo-logo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+    min-height: 0;
+    width: 100%;
+}
+
+.project-feedo-logo-img {
+    display: block;
+    max-height: 5.4rem;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.project-feedo-card-title {
+    width: 100%;
+    text-align: left;
+}
+
+.feedo-detail-logo-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 0.1rem;
+    max-width: 1100px;
+}
+
+.feedo-detail-logo-img {
+    display: block;
+    max-width: min(40rem, 94vw);
+    height: auto;
+    max-height: 15.5rem;
+    object-fit: contain;
+}
+
+.project-card-footer {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 0.4rem;
+}
+
+.project-card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-family: var(--font-mono);
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.project-card-link:hover .project-card-cta {
+    color: var(--primary-color);
+    transform: translateX(4px);
+}
+
+.feedo-detail-section .page-header {
+    margin-top: 0;
+    margin-bottom: 3rem;
+}
+
+.feedo-page-subtitle {
+    font-size: 2.6rem !important;
+    font-weight: 500 !important;
+}
+
+@media (max-width: 768px) {
+    .feedo-page-subtitle {
+        font-size: 2.2rem !important;
+    }
+}
+
+.feedo-detail-section {
+    position: relative;
+    min-height: 100vh;
+    padding: 10rem 8% 6rem;
+    overflow: hidden;
+    background: var(--bg-color);
+}
+
+.feedo-detail-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.feedo-back-row {
+    margin-bottom: 2rem;
+}
+
+.feedo-back-btn {
+    font-size: 1.4rem;
+}
+
+.feedo-intro-card {
+    margin-bottom: 3rem !important;
+    padding: 2.4rem 2.8rem !important;
+}
+
+.feedo-intro-text {
+    font-size: 1.6rem;
+    line-height: 1.85;
+    color: var(--text-muted);
+}
+
+.feedo-legal-section-divider {
+    border: none;
+    margin: 4rem 0 2.4rem;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.feedo-legal-cards-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1.6rem;
+    font-family: var(--font-mono);
+}
+
+.feedo-legal-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    gap: 2rem;
+    margin-bottom: 3.5rem;
+}
+
+.feedo-legal-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+    border-radius: inherit;
+}
+
+.feedo-legal-card {
+    height: 100% !important;
+    padding: 2.4rem 2.2rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feedo-legal-card-link:hover .feedo-legal-card {
+    transform: translateY(-2px);
+}
+
+.feedo-legal-card-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 0.8rem;
+    font-family: var(--font-mono);
+    line-height: 1.3;
+}
+
+.feedo-legal-card-desc {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    flex-grow: 1;
+    margin-bottom: 1.2rem;
+}
+
+.feedo-legal-card-cta {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-family: var(--font-mono);
+}
+
+.feedo-legal-doc {
+    max-width: 80rem;
+    margin: 0 auto;
+    font-size: 1.55rem;
+    line-height: 1.85;
+    color: var(--text-muted);
+}
+
+.feedo-legal-doc-title {
+    font-size: clamp(2.4rem, 4vw, 3.4rem);
+    font-weight: 800;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    line-height: 1.25;
+    font-family: var(--font-mono);
+}
+
+.feedo-legal-doc-lead {
+    margin-bottom: 2rem;
+    padding: 1.2rem 1.4rem;
+    border-left: 4px solid var(--primary-color);
+    background: var(--bg-card);
+    border-radius: 0 8px 8px 0;
+}
+
+.feedo-legal-doc h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 2.8rem 0 1.2rem;
+    font-family: var(--font-mono);
+}
+
+.feedo-legal-doc ul {
+    padding-left: 1.8rem;
+    margin: 1rem 0 1.2rem;
+}
+
+.feedo-legal-doc p,
+.feedo-legal-doc li {
+    margin-bottom: 0.9rem;
+}
+
+.feedo-legal-doc a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.feedo-legal-doc a:hover {
+    color: var(--secondary-color);
+}
+
+.feedo-legal-table-wrap {
+    overflow-x: auto;
+    margin: 1.6rem 0 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-subtle);
+}
+
+.feedo-legal-doc table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.45rem;
+    min-width: 52rem;
+}
+
+.feedo-legal-doc th,
+.feedo-legal-doc td {
+    border: 1px solid var(--border-subtle);
+    padding: 1rem 1.2rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+.feedo-legal-doc th {
+    background: var(--bg-secondary);
+    color: var(--text-color);
+    font-weight: 700;
+    font-family: var(--font-mono);
+    font-size: 1.35rem;
+}
+
+.feedo-legal-doc strong {
+    color: var(--text-color);
+}
+
+.feedo-legal-crosslinks {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.feedo-legal-crosslinks a {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-family: var(--font-mono);
+    text-decoration: none;
+}
+
+.feedo-legal-crosslinks a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.feedo-legal-back-row {
+    margin-bottom: 2.4rem;
+}
+
+.feedo-sections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.feedo-feature-card {
+    padding: 2.4rem 2.2rem !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.feedo-feature-title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-family: var(--font-mono);
+    line-height: 1.35;
+}
+
+.feedo-feature-body {
+    font-size: 1.5rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+    flex-grow: 1;
+}
+
+@media (max-width: 480px) {
+    .feedo-sections-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =============================================
    MODERN FOOTER
    ============================================= */
 .footer-modern {
@@ -1292,7 +1684,9 @@ a.contact-link:hover {
     .home-reactbits,
     .about-section,
     .contact-section,
-    .services-section {
+    .services-section,
+    .projects-section,
+    .feedo-detail-section {
         padding: 8rem 4% 6rem;
     }
 
