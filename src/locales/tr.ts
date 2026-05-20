@@ -133,6 +133,11 @@ export default {
           "Arayüz Türkçe ve İngilizce (i18n) destekli tasarlanmıştır."
       }
     },
+    store: {
+      groupAria: "Feedo'yu App Store veya Google Play'den indir",
+      badgeAltAppStore: "App Store'dan indirin",
+      badgeAltGooglePlay: "Google Play'den edinin",
+    },
     legal: {
       sectionTitle: "Yasal metinler (Feedo)",
       kvkCardTitle: "KVKK Aydınlatma Metni — Feedo",

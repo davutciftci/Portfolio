@@ -133,6 +133,11 @@ export default {
           "The UI is built for Turkish and English (i18n)."
       }
     },
+    store: {
+      groupAria: "Download Feedo on the App Store or Google Play",
+      badgeAltAppStore: "Download on the App Store",
+      badgeAltGooglePlay: "Get it on Google Play",
+    },
     legal: {
       sectionTitle: "Legal notices (Feedo)",
       kvkCardTitle: "KVKK disclosure — Feedo",

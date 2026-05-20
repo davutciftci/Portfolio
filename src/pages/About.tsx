@@ -25,7 +25,7 @@ const defaultSkills = [
 ]
 
 const techStack = [
-  'React', 'TypeScript', 'Node.js', 'Express', 'NestJS', 'ElysiaJS', 'PostgreSQL',
+  'React', 'React Native', 'TypeScript', 'Node.js', 'Express', 'NestJS', 'ElysiaJS', 'PostgreSQL',
   'Git', 'GitHub', 'Docker', 'Tailwind CSS', 'Next.js', 'Jenkins', 'VSCode', 'Cursor', 'Antigravity'
 ]
 

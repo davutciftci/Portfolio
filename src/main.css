@@ -1230,9 +1230,63 @@ a.contact-link:hover {
     color: var(--text-muted);
 }
 
+.feedo-store-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    margin: 3.5rem 0 2.4rem;
+}
+
+.feedo-store-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    line-height: 0;
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    background: transparent;
+    border-radius: 0.6rem;
+    transition: transform 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
+}
+
+.feedo-store-btn:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+.feedo-store-badge-img {
+    display: block;
+    height: 4.5rem;
+    width: auto;
+    max-width: min(100%, 18rem);
+}
+
+a.feedo-store-btn:hover .feedo-store-badge-img {
+    transform: translateY(-1px);
+    filter: brightness(1.06);
+}
+
+a.feedo-store-btn:active .feedo-store-badge-img {
+    transform: translateY(0);
+    filter: brightness(1);
+}
+
+.feedo-store-btn--pending {
+    cursor: default;
+    opacity: 0.9;
+}
+
+.feedo-store-btn--pending .feedo-store-badge-img {
+    pointer-events: none;
+}
+
 .feedo-legal-section-divider {
     border: none;
-    margin: 4rem 0 2.4rem;
+    margin: 0 0 2.4rem;
     border-top: 1px solid var(--border-subtle);
 }
 

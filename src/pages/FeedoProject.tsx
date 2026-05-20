@@ -24,11 +24,39 @@ const FEEDO_SECTION_KEYS = [
   "i18n",
 ] as const
 
+/** Mağaza bağlantıları yayınlandığında doldurulacak. */
+const FEEDO_APP_STORE_URL = ""
+const FEEDO_PLAY_STORE_URL = ""
+
+const FEEDO_APP_STORE_BADGE_SRC = "/app-store-badge.svg"
+const FEEDO_GOOGLE_PLAY_BADGE_SRC = "/google-play-badge.svg"
+
 function FeedoProject() {
   const { t } = useTranslation()
   const showParticles = useDeferredEffects()
   const accent = "#ff6a00"
   const accentBg = "rgba(255, 106, 0, 0.12)" as const
+
+  const appStoreBadgeImg = (
+    <img
+      src={FEEDO_APP_STORE_BADGE_SRC}
+      alt={t("feedo.store.badgeAltAppStore")}
+      className="feedo-store-badge-img"
+      width={135}
+      height={40}
+      decoding="async"
+    />
+  )
+  const googlePlayBadgeImg = (
+    <img
+      src={FEEDO_GOOGLE_PLAY_BADGE_SRC}
+      alt={t("feedo.store.badgeAltGooglePlay")}
+      className="feedo-store-badge-img"
+      width={180}
+      height={53}
+      decoding="async"
+    />
+  )
 
   return (
     <section className="feedo-detail-section">
@@ -101,6 +129,43 @@ function FeedoProject() {
             </AnimatedContent>
           ))}
         </div>
+
+        <AnimatedContent distance={32} direction="vertical" delay={0.04} duration={0.5}>
+          <div
+            className="feedo-store-buttons"
+            role="group"
+            aria-label={t("feedo.store.groupAria")}
+          >
+            {FEEDO_APP_STORE_URL ? (
+              <a
+                href={FEEDO_APP_STORE_URL}
+                className="feedo-store-btn feedo-store-btn--app-store"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {appStoreBadgeImg}
+              </a>
+            ) : (
+              <span className="feedo-store-btn feedo-store-btn--app-store feedo-store-btn--pending">
+                {appStoreBadgeImg}
+              </span>
+            )}
+            {FEEDO_PLAY_STORE_URL ? (
+              <a
+                href={FEEDO_PLAY_STORE_URL}
+                className="feedo-store-btn feedo-store-btn--google-play"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {googlePlayBadgeImg}
+              </a>
+            ) : (
+              <span className="feedo-store-btn feedo-store-btn--google-play feedo-store-btn--pending">
+                {googlePlayBadgeImg}
+              </span>
+            )}
+          </div>
+        </AnimatedContent>
 
         <hr className="feedo-legal-section-divider" aria-hidden />
 
