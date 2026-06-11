@@ -8,6 +8,8 @@ interface SEOProps {
   image?: string;
   url?: string;
   type?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  schema?: Record<string, any> | Record<string, any>[];
 }
 
 const SEO = ({ 
@@ -16,7 +18,8 @@ const SEO = ({
   keywords, 
   image = '/favicon.svg', 
   url = window.location.href,
-  type = 'website'
+  type = 'website',
+  schema
 }: SEOProps) => {
   const { t, i18n } = useTranslation();
   
@@ -26,7 +29,7 @@ const SEO = ({
   const metaKeywords = keywords || t('seo.defaultKeywords');
 
   return (
-    <Helmet>
+    <Helmet htmlAttributes={{ lang: i18n.language }}>
       {/* Favicons */}
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       <link rel="icon" type="image/png" href="/favicon.png" />
@@ -52,6 +55,13 @@ const SEO = ({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:image" content={image} />
+
+      {/* JSON-LD Structured Data */}
+      {schema && (
+        <script type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      )}
     </Helmet>
   );
 };

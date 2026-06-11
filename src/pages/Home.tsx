@@ -28,7 +28,21 @@ function Home() {
 
   return (
     <section className="home home-reactbits">
-      <SEO title={t("seo.home.title")} description={t("seo.home.description")} />
+      <SEO 
+        title={t("seo.home.title")} 
+        description={t("seo.home.description")} 
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Davut Çiftçi",
+          "jobTitle": "Full Stack Developer",
+          "url": "https://davutciftci.vercel.app",
+          "sameAs": [
+            "https://github.com/davutciftci",
+            "https://linkedin.com/in/davutciftci"
+          ]
+        }}
+      />
       <ParticlesBackdrop enabled={showEffects} />
 
       <div className="home-content home-content-reactbits">

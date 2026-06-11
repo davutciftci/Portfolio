@@ -131,9 +131,15 @@ export default {
         title: "Internationalization",
         body:
           "The UI is built for Turkish and English (i18n)."
+      },
+      capacity: {
+        title: "Capacity Control",
+        body:
+          "Depending on the area of your different farms, you can add any animal to your farm to see its capacity and easily keep track of which animal belongs to which farm."
       }
     },
     store: {
+      comingSoon: "Coming soon",
       groupAria: "Download Feedo on the App Store or Google Play",
       badgeAltAppStore: "Download on the App Store",
       badgeAltGooglePlay: "Get it on Google Play",

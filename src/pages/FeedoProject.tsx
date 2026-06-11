@@ -19,6 +19,7 @@ const FEEDO_SECTION_KEYS = [
   "financial",
   "reports",
   "homeOps",
+  "capacity",
   "account",
   "offline",
   "i18n",
@@ -45,6 +46,7 @@ function FeedoProject() {
       width={135}
       height={40}
       decoding="async"
+      loading="lazy"
     />
   )
   const googlePlayBadgeImg = (
@@ -55,6 +57,7 @@ function FeedoProject() {
       width={180}
       height={53}
       decoding="async"
+      loading="lazy"
     />
   )
 
@@ -82,6 +85,7 @@ function FeedoProject() {
             width={360}
             height={92}
             decoding="async"
+            loading="lazy"
           />
         </div>
 
@@ -131,6 +135,7 @@ function FeedoProject() {
         </div>
 
         <AnimatedContent distance={32} direction="vertical" delay={0.04} duration={0.5}>
+          <h2 className="feedo-store-coming-soon">{t("feedo.store.comingSoon")}</h2>
           <div
             className="feedo-store-buttons"
             role="group"

@@ -131,9 +131,15 @@ export default {
         title: "Çoklu dil",
         body:
           "Arayüz Türkçe ve İngilizce (i18n) destekli tasarlanmıştır."
+      },
+      capacity: {
+        title: "Kapasite Kontrolü",
+        body:
+          "Farklı çiftliklerinizin alanına göre çiftliğinize dilediğiniz hayvanı ekleyerek çiftliğinizin kapasitesini görebilir ve hangi hayvanın hangi çiftlikte olduğunu rahatlıkla kontrol edebilirsiniz."
       }
     },
     store: {
+      comingSoon: "Çok yakında",
       groupAria: "Feedo'yu App Store veya Google Play'den indir",
       badgeAltAppStore: "App Store'dan indirin",
       badgeAltGooglePlay: "Google Play'den edinin",

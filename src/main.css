@@ -1144,8 +1144,10 @@ a.contact-link:hover {
 .feedo-detail-logo-wrap {
     display: flex;
     justify-content: center;
-    margin: 0 auto 0.1rem;
+    margin: 0 auto -9rem;
     max-width: 1100px;
+    position: relative;
+    z-index: 10;
 }
 
 .feedo-detail-logo-img {
@@ -1230,13 +1232,23 @@ a.contact-link:hover {
     color: var(--text-muted);
 }
 
+.feedo-store-coming-soon {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    font-family: var(--font-mono);
+}
+
 .feedo-store-buttons {
     display: flex;
     flex-wrap: wrap;
     gap: 1.2rem;
     justify-content: center;
     align-items: center;
-    margin: 3.5rem 0 2.4rem;
+    margin: 0 0 2.4rem;
 }
 
 .feedo-store-btn {

@@ -1,4 +1,5 @@
-import { FaLinkedin, FaGithub, FaMedium } from 'react-icons/fa6';
+import { FaLinkedin, FaGithub } from 'react-icons/fa6';
+import { FaMedium } from "react-icons/fa";
 
 function SocialIcons() {
     return (

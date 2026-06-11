@@ -58,6 +58,7 @@ function Projects() {
                       width={220}
                       height={56}
                       decoding="async"
+                      loading="lazy"
                     />
                   </div>
                   <h3 className="service-title project-feedo-card-title">
