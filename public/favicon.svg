@@ -7,8 +7,8 @@
     font-family="Arial, sans-serif"
     font-weight="900"
     font-size="62"
-    fill="white"
+    fill="#ff6a00"
   >
-    D<tspan fill="#ff6a00">C</tspan>
+    DC
   </text>
 </svg>
