@@ -8,8 +8,7 @@ interface SEOProps {
   image?: string;
   url?: string;
   type?: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  schema?: Record<string, any> | Record<string, any>[];
+  schema?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const SEO = ({ 
@@ -30,10 +29,6 @@ const SEO = ({
 
   return (
     <Helmet htmlAttributes={{ lang: i18n.language }}>
-      {/* Favicons */}
-      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-      <link rel="icon" type="image/png" href="/favicon.png" />
-      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
       {/* Standard metadata tags */}
       <title>{fullTitle}</title>
