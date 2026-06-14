@@ -34,7 +34,7 @@ function Footer() {
         <footer className="footer-modern">
             <div className="footer-modern-content">
                 <div className="footer-logo">
-                    <Link to="/" onClick={scrollToTop}>D<span style={{ color: 'var(--primary-color)' }}>C</span></Link>
+                    <Link to="/" onClick={scrollToTop}><span style={{ color: 'var(--primary-color)' }}>DC</span></Link>
                 </div>
                 
                 <div className="footer-text">

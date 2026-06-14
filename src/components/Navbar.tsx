@@ -6,16 +6,18 @@ import { useTranslation } from 'react-i18next';
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
-    const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+    const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+        return (localStorage.getItem('theme') as 'light' | 'dark') || 'dark';
+    });
     const [isScrolled, setIsScrolled] = useState(false);
     const location = useLocation();
     const { t, i18n } = useTranslation();
 
     useEffect(() => {
-        const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' || 'dark';
-        setTheme(savedTheme);
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        
+        document.documentElement.setAttribute('data-theme', theme);
+    }, [theme]);
+
+    useEffect(() => {
         let lastScrollY = window.scrollY;
         
         const handleScroll = () => {
@@ -50,13 +52,12 @@ function Navbar() {
             window.removeEventListener('scroll', handleScroll);
             window.removeEventListener('mousemove', handleMouseMove);
         };
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     const toggleTheme = () => {
         const newTheme = theme === 'dark' ? 'light' : 'dark';
         setTheme(newTheme);
         localStorage.setItem('theme', newTheme);
-        document.documentElement.setAttribute('data-theme', newTheme);
     };
 
     const toggleMenu = () => {
@@ -78,7 +79,7 @@ function Navbar() {
 
     return (
         <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
-            <Link to="/" className="logo" onClick={closeMenu}>D<span>C</span></Link>
+            <Link to="/" className="logo" onClick={closeMenu}><span>DC</span></Link>
 
             <div className={`bx bx-menu ${isOpen ? 'bx-x' : ''}`} id="menu-icon" onClick={toggleMenu}>
                 {isOpen ? <FaXmark aria-hidden /> : <FaBars aria-hidden />}
