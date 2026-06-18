@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://davutciftci.vercel.app/sitemap.xml
+Sitemap: https://www.davutciftci.com/sitemap.xml
