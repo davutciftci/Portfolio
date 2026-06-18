@@ -15,7 +15,7 @@ const SEO = ({
   title, 
   description, 
   keywords, 
-  image = '/favicon.svg', 
+  image = '/favicon-512x512.png', 
   url = window.location.href,
   type = 'website',
   schema
@@ -26,6 +26,11 @@ const SEO = ({
   const fullTitle = title ? `${title} | ${siteName}` : siteName;
   const metaDescription = description || t('seo.defaultDescription');
   const metaKeywords = keywords || t('seo.defaultKeywords');
+
+  // Ensure image URL is absolute for Open Graph and Twitter
+  const absoluteImage = image.startsWith('http') 
+    ? image 
+    : `${window.location.origin}${image.startsWith('/') ? '' : '/'}${image}?v=2`;
 
   return (
     <Helmet htmlAttributes={{ lang: i18n.language }}>
@@ -41,7 +46,7 @@ const SEO = ({
       <meta property="og:url" content={url} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={metaDescription} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={absoluteImage} />
       <meta property="og:locale" content={i18n.language} />
 
       {/* Twitter */}
@@ -49,7 +54,7 @@ const SEO = ({
       <meta name="twitter:url" content={url} />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={metaDescription} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={absoluteImage} />
 
       {/* JSON-LD Structured Data */}
       {schema && (
