@@ -36,7 +36,8 @@ function Home() {
           "@type": "Person",
           "name": "Davut Çiftçi",
           "jobTitle": "Full Stack Developer",
-          "url": "https://davutciftci.vercel.app",
+          "url": "https://www.davutciftci.com",
+          "image": "https://www.davutciftci.com/favicon-512x512-v3.png",
           "sameAs": [
             "https://github.com/davutciftci",
             "https://linkedin.com/in/davutciftci"

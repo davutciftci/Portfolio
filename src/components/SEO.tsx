@@ -15,7 +15,7 @@ const SEO = ({
   title, 
   description, 
   keywords, 
-  image = '/favicon-512x512.png', 
+  image = '/favicon-512x512-v3.png', 
   url = window.location.href,
   type = 'website',
   schema
