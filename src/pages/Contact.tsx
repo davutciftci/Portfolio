@@ -7,10 +7,31 @@ import { FaEnvelope, FaWhatsapp, FaPaperPlane } from "react-icons/fa6"
 import { useTranslation } from 'react-i18next';
 import SEO from "../components/SEO"
 import { useDeferredEffects } from "../hooks/useDeferredEffects"
+import { useEffect, useRef } from "react"
 
 function Contact() {
   const { t } = useTranslation();
   const showParticles = useDeferredEffects();
+  const turnstileRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const siteKey = import.meta.env.VITE_CLOUDFLARE_SITE_KEY as string;
+    if (!siteKey || !turnstileRef.current) return;
+
+    // Turnstile global API'si yüklenene kadar bekle
+    const renderWidget = () => {
+      if (typeof window !== 'undefined' && (window as unknown as { turnstile?: { render: (el: HTMLElement, opts: Record<string, unknown>) => void } }).turnstile) {
+        (window as unknown as { turnstile: { render: (el: HTMLElement, opts: Record<string, unknown>) => void } }).turnstile.render(turnstileRef.current!, {
+          sitekey: siteKey,
+          theme: 'dark',
+        });
+      } else {
+        // Script henüz yüklenmemişse 100ms sonra tekrar dene
+        setTimeout(renderWidget, 100);
+      }
+    };
+    renderWidget();
+  }, []);
   return (
     <section className="contact-section">
       <SEO 
@@ -85,6 +106,11 @@ function Contact() {
         {/* Sosyal ikonlar */}
         <div className="contact-social">
           <SocialIcons />
+        </div>
+
+        {/* Cloudflare Turnstile */}
+        <div className="contact-turnstile">
+          <div ref={turnstileRef} />
         </div>
 
         {/* CTA butonu */}
