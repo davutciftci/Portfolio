@@ -7,11 +7,12 @@ export default {
     contact: "İletişim"
   },
   home: {
-    greeting: "Merhaba, Ben Davut",
-    subtitle: "Full Stack Geliştirici",
-    role_1: "Merhaba, Ben Davut.",
+    greeting: "Merhaba, Ben Barzan Davut",
+    subtitle: "Full Stack Developer",
+    role_1: "Merhaba, Ben Barzan Davut.",
     role_2: "Yazılım Geliştiricisiyim.",
     role_3: "Psikoloğum.",
+    role_4: "Baristayım.",
     desc: "Yazılım geliştirmeye olan tutkumla React, TypeScript ve Node.js gibi modern web teknolojilerini kullanarak kullanıcı odaklı ve ölçeklenebilir uygulamalar geliştiriyorum.",
     btnHire: "Bana Ulaşın",
     btnAbout: "Hakkımda"
@@ -20,20 +21,22 @@ export default {
     title: "Hakkımda",
     subtitle: "Ben kimim? Gelin şifresini çözelim...",
     whoIAm: "Ben Kimim",
-    bio: "Ben tutkulu bir Full Stack Geliştiriciyim. Modern web teknolojilerini kullanarak kullanıcı dostu, ölçeklenebilir ve performansı yüksek uygulamalar geliştirmeyi seviyorum. Teknoloji dünyasındaki yolculuğum, merak ve gerçek problemleri çözme arzusu ile şekillendi.",
+    bio: "Yazılım, psikoloji ve insan ilişkilerinin kesişiminde çalışan çok yönlü bir profesyonelim. Full Stack Geliştirici olarak React, TypeScript ve Node.js ekosistemiyle ölçeklenebilir web ve mobil uygulamalar geliştirirken; Psikoloji mezunu kimliğimle kullanıcı davranışlarını derinlemesine anlıyor ve empati odaklı çözümler üretiyorum. Türk İşaret Dili ile sağır bireylere çift danışmanlığı sunarak iletişimin her biçimiyle bağ kurabiliyorum. Freelance olarak global projelerde uzaktan çalışma deneyimim, farklı kültür ve iş dinamiklerine hızla adapte olmamı sağladı. Baristalik deneyimim ise bana müşteri memnuniyeti, zaman yönetimi ve baskı altında performans gibi değerli beceriler kazandırdı. 10'dan fazla tamamlanmış projeyle, teknolojiyi insana dokunan ürünlere dönüştürmeye devam ediyorum.",
     topLanguages: "En İyi Diller (Github)",
     techTools: "Teknolojiler & Kullanılan Araçlar",
     experience: "Deneyim & Eğitim",
     timeline_fullstack: "Full Stack Geliştirici",
-    timeline_fullstack_desc: "Ölçeklenebilir web uygulamaları",
-    timeline_psychology: "Psikoloji Derecesi",
-    timeline_psychology_desc: "İnsan odaklı yaklaşım",
+    timeline_fullstack_desc: "React, TypeScript ve Node.js ile ölçeklenebilir, performans odaklı web ve mobil uygulamalar geliştirme. Frontend'den backend'e, veritabanı tasarımından API mimarisine kadar uçtan uca çözümler üretme.",
+    timeline_psychology: "Psikoloji Lisans Derecesi",
+    timeline_psychology_desc: "İnsan davranışlarını ve bilişsel süreçleri anlama eğitimi; kullanıcı deneyimi tasarımına psikolojik perspektif katarak empati odaklı, kullanıcı merkezli ürünler geliştirme becerisi.",
     timeline_signlanguage: "Sağır Bireylerle Çift Danışmanlığı",
-    timeline_signlanguage_desc: "Türk İşaret Dili ile danışmanlık",
+    timeline_signlanguage_desc: "Türk İşaret Dili (TİD) kullanarak sağır ve işitme engelli bireylere profesyonel çift danışmanlığı hizmeti sunma; erişilebilirlik ve kapsayıcı iletişim konusunda uzmanlaşma.",
     timeline_projects: "10+ Tamamlanmış Proje",
-    timeline_projects_desc: "Geniş portfolyo",
+    timeline_projects_desc: "E-ticaret platformlarından çiftlik yönetim sistemlerine, portfolyo sitelerinden mobil uygulamalara kadar geniş yelpazede başarıyla tamamlanmış projeler.",
     timeline_freelance: "Freelance & Uzaktan Çalışma",
-    timeline_freelance_desc: "Global projeler"
+    timeline_freelance_desc: "Farklı sektör ve coğrafyalardan müşterilerle uzaktan iş birliği yaparak global projelerde yer alma; bağımsız çalışma disiplini ve çapraz kültürel iletişim becerisi.",
+    timeline_barista: "Barista",
+    timeline_barista_desc: "Profesyonel kahve hazırlama ve sunum deneyimi; yoğun tempoda müşteri memnuniyeti odaklı çalışma, zaman yönetimi, ekip koordinasyonu ve baskı altında yüksek performans sergileme becerisi."
   },
   services: {
     title: "Hizmetlerim",
@@ -46,6 +49,8 @@ export default {
     s3_desc: "Güçlü API mimarileri (Node.js, vb) ve güvenli veritabanı tasarımı ile uçtan uca uygulama geliştirme.",
     s4_title: "UI/UX & Arayüzler",
     s4_desc: "İnteraktif öğelere, mikro animasyonlara ve akıcı yapılara odaklanarak güzel ve sezgisel UI tasarlıyorum.",
+    s5_title: "iOS & Android Uygulama Geliştirme",
+    s5_desc: "React Native ile tek kod tabanından hem iOS hem Android platformlarına yönelik performanslı, native hissiyatlı mobil uygulamalar geliştiriyorum. Kullanıcı dostu arayüz tasarımı, push bildirim altyapısı, çevrimdışı kullanım desteği, cihaz API entegrasyonları ve uygulama mağazası yayınlama süreçlerini uçtan uca yönetiyorum.",
     learnMore: "Daha Fazla ➔",
     ctaText: "Aklınızda özel bir proje mi var?",
     ctaBtn: "Hadi Konuşalım"
@@ -169,23 +174,23 @@ export default {
     btnSendUrl: "E-Posta Gönder"
   },
   footer: {
-    copyright: "Telif Hakkı © 2026 Davut Barzan Çiftçi | Tüm Hakları Saklıdır.",
+    copyright: "Telif Hakkı © 2026 Barzan Davut Çiftçi | Tüm Hakları Saklıdır.",
     backToTop: "Yukarı Çık"
   },
   seo: {
-    defaultDescription: "Davut Çiftçi - Full-stack Geliştirici & İşaret Dili Danışmanı Portfolyosu. Modern web çözümleri ve profesyonel danışmanlık hizmetleri.",
-    defaultKeywords: "Davut Çiftçi, Portfolyo, Full-stack Geliştirici, İşaret Dili, React, TypeScript, Web Geliştirme",
+    defaultDescription: "Barzan Davut Çiftçi - Full-stack Geliştirici & İşaret Dili Danışmanı Portfolyosu. Modern web çözümleri ve profesyonel danışmanlık hizmetleri.",
+    defaultKeywords: "Barzan Davut Çiftçi, Portfolyo, Full-stack Geliştirici, İşaret Dili, React, TypeScript, Web Geliştirme",
     home: {
       title: "Ana Sayfa",
-      description: "Davut Çiftçi'nin profesyonel portfolyosuna hoş geldiniz. Yazılım geliştirme projelerimi ve danışmanlık hizmetlerimi keşfedin."
+      description: " Barzan Davut Çiftçi'nin profesyonel portfolyosuna hoş geldiniz. Yazılım geliştirme projelerimi ve danışmanlık hizmetlerimi keşfedin."
     },
     about: {
       title: "Hakkımda",
-      description: "Davut Çiftçi'nin geçmişi, yetenekleri ve full-stack geliştirme ile psikoloji alanındaki deneyimleri hakkında daha fazla bilgi edinin."
+      description: "Barzan Davut Çiftçi'nin geçmişi, yetenekleri ve full-stack geliştirme ile psikoloji alanındaki deneyimleri hakkında daha fazla bilgi edinin."
     },
     services: {
       title: "Hizmetler",
-      description: "Davut Çiftçi tarafından sunulan web geliştirme, e-ticaret ve full-stack çözümler gibi profesyonel hizmetleri keşfedin."
+      description: "Barzan Davut Çiftçi tarafından sunulan web geliştirme, e-ticaret ve full-stack çözümler gibi profesyonel hizmetleri keşfedin."
     },
     contact: {
       title: "İletişim",
@@ -193,7 +198,7 @@ export default {
     },
     projects: {
       title: "Projelerim",
-      description: "Davut Çiftçi’nin geliştirdiği ürün ve platform projeleri; Feedo çiftlik yönetimi ve daha fazlası."
+      description: "Barzan Davut Çiftçi’nin geliştirdiği ürün ve platform projeleri; Feedo çiftlik yönetimi ve daha fazlası."
     },
     feedo: {
       title: "Feedo",

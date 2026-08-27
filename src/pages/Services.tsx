@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import SEO from "../components/SEO"
 import type { IconType } from 'react-icons';
-import { FaCode, FaCartShopping, FaServer, FaMobileScreenButton, FaRocket } from 'react-icons/fa6';
+import { FaCode, FaCartShopping, FaServer, FaMobileScreenButton, FaRocket, FaAppStoreIos } from 'react-icons/fa6';
 import { useDeferredEffects } from "../hooks/useDeferredEffects"
 
 type Service = {
@@ -55,6 +55,14 @@ function Services() {
       desc: t('services.s4_desc'),
       color: "#1a9c8a",
       colorBg: "rgba(26, 156, 138, 0.12)"
+    },
+    {
+      id: 5,
+      title: t('services.s5_title'),
+      icon: FaAppStoreIos,
+      desc: t('services.s5_desc'),
+      color: "#ff6a00",
+      colorBg: "rgba(255, 106, 0, 0.12)"
     }
   ];
 

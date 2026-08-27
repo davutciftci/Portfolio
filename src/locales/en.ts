@@ -7,11 +7,12 @@ export default {
     contact: "Contact"
   },
   home: {
-    greeting: "Hi, I'm Davut",
+    greeting: "Hi, I'm Barzan Davut",
     subtitle: "Full Stack Developer",
-    role_1: "Hi, I'm Davut.",
+    role_1: "Hi, I'm Barzan Davut.",
     role_2: "I am a Software Developer.",
     role_3: "I am a Psychologist.",
+    role_4: "I am Barista.",
     desc: "Driven by a passion for software development, I build user-focused, scalable applications using modern web technologies like React, TypeScript, and Node.js.",
     btnHire: "Hire me",
     btnAbout: "About me"
@@ -20,20 +21,22 @@ export default {
     title: "About Me",
     subtitle: "Who am I? Let me decrypt that for you...",
     whoIAm: "Who I Am",
-    bio: "I am a passionate Full Stack Developer. I love building user-friendly, scalable, and performant applications using modern web technologies. My journey in the technology world has been shaped by curiosity and a desire to solve real-world problems.",
+    bio: "I am a multifaceted professional working at the intersection of software, psychology, and human connection. As a Full Stack Developer, I build scalable web and mobile applications with the React, TypeScript, and Node.js ecosystem, while my Psychology degree gives me a deep understanding of user behavior and empathy-driven design. I provide couples counseling for deaf individuals using Turkish Sign Language, bridging communication in all its forms. My freelance experience on global remote projects has taught me to adapt quickly to diverse cultures and workflows. My time as a barista instilled valuable skills in customer satisfaction, time management, and performing under pressure. With 10+ completed projects, I continue to transform technology into products that truly touch people's lives.",
     topLanguages: "Top Languages (Github)",
     techTools: "Technologies & Tools",
     experience: "Experience & Education",
     timeline_fullstack: "Full Stack Developer",
-    timeline_fullstack_desc: "Building scalable web apps",
-    timeline_psychology: "Psychology Degree",
-    timeline_psychology_desc: "Human-centered approach",
+    timeline_fullstack_desc: "Developing scalable, performance-driven web and mobile applications with React, TypeScript, and Node.js. Delivering end-to-end solutions from frontend interfaces to backend APIs and database architecture.",
+    timeline_psychology: "Psychology Bachelor's Degree",
+    timeline_psychology_desc: "Trained in understanding human behavior and cognitive processes; bringing a psychological perspective to UX design and building empathy-centered, user-first products.",
     timeline_signlanguage: "Couples Counseling with Deaf Individuals",
-    timeline_signlanguage_desc: "Counseling via Turkish Sign Language",
+    timeline_signlanguage_desc: "Providing professional couples counseling for deaf and hard-of-hearing individuals using Turkish Sign Language (TID); specializing in accessibility and inclusive communication.",
     timeline_projects: "10+ Completed Projects",
-    timeline_projects_desc: "Diverse portfolio",
+    timeline_projects_desc: "Successfully delivered projects spanning e-commerce platforms, farm management systems, portfolio websites, and mobile applications across a wide range of domains.",
     timeline_freelance: "Freelance & Remote Work",
-    timeline_freelance_desc: "Global collaboration"
+    timeline_freelance_desc: "Collaborating remotely with clients from different industries and geographies on global projects; demonstrating self-discipline and cross-cultural communication skills.",
+    timeline_barista: "Barista",
+    timeline_barista_desc: "Professional coffee preparation and presentation experience; customer satisfaction-focused work in fast-paced environments, developing strong time management, team coordination, and high-performance skills under pressure."
   },
   services: {
     title: "My Services",
@@ -46,6 +49,8 @@ export default {
     s3_desc: "End-to-end application development featuring robust API architectures (Node.js, NestJS) and secure database design.",
     s4_title: "UI/UX & Interfaces",
     s4_desc: "Crafting beautiful and intuitive user interfaces focusing on interactive elements, micro-animations, and fluid layouts.",
+    s5_title: "Android & iOS App Development",
+    s5_desc: "Building performant, native-feeling mobile applications for both Android and iOS from a single codebase using React Native. I manage the entire lifecycle — from user-friendly UI design, push notification infrastructure, offline support, and device API integrations to end-to-end app store publishing.",
     learnMore: "Learn More ➔",
     ctaText: "Have a specific project in mind?",
     ctaBtn: "Let's Discuss"
@@ -169,31 +174,31 @@ export default {
     btnSendUrl: "Send Email"
   },
   footer: {
-    copyright: "Copyright © 2026 by Davut Barzan Ciftci | All Rights Reserved.",
+    copyright: "Copyright © 2026 by Barzan Davut Ciftci | All Rights Reserved.",
     backToTop: "Scroll to Top"
   },
   seo: {
-    defaultDescription: "Davut Çiftçi - Full-stack Developer & Sign Language Counselor Portfolio. Modern web solutions and professional counselor services.",
-    defaultKeywords: "Davut Çiftçi, Portfolio, Full-stack Developer, Sign Language, React, TypeScript, Web Development",
+    defaultDescription: "Barzan Davut Ciftci - Full-stack Developer & Sign Language Counselor Portfolio. Modern web solutions and professional counselor services.",
+    defaultKeywords: "Barzan Davut Ciftci, Portfolio, Full-stack Developer, Sign Language, React, TypeScript, Web Development",
     home: {
       title: "Home",
-      description: "Welcome to Davut Çiftçi's professional portfolio. Discover my software development projects and counseling services."
+      description: "Welcome to Barzan Davut Ciftci's professional portfolio. Discover my software development projects and counseling services."
     },
     about: {
       title: "About Me",
-      description: "Learn more about Davut Çiftçi's background, skills, and experience in full-stack development and psychology."
+      description: "Learn more about Barzan Davut Ciftci's background, skills, and experience in full-stack development and psychology."
     },
     services: {
       title: "Services",
-      description: "Explore the professional services offered by Davut Çiftçi, including web development, e-commerce, and full-stack solutions."
+      description: "Explore the professional services offered by Barzan Davut Ciftci, including web development, e-commerce, and full-stack solutions."
     },
     contact: {
       title: "Contact",
-      description: "Get in touch with Davut Çiftçi for collaboration, projects, or professional counseling inquiries."
+      description: "Get in touch with Barzan Davut Ciftci for collaboration, projects, or professional counseling inquiries."
     },
     projects: {
       title: "My Projects",
-      description: "Product and platform projects by Davut Çiftçi, including Feedo farm management."
+      description: "Product and platform projects by Barzan Davut Ciftci, including Feedo farm management."
     },
     feedo: {
       title: "Feedo",

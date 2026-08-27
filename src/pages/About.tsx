@@ -20,13 +20,14 @@ const defaultSkills = [
   { name: 'TypeScript', level: 85, icon: '🔷' },
   { name: 'Node.js', level: 80, icon: '🟢' },
   { name: 'JavaScript', level: 85, icon: '🟡' },
+  { name: 'NestJS', level: 75, icon: '🐈' },
   { name: 'CSS/Sass', level: 85, icon: '🎨' },
   { name: 'HTML', level: 85, icon: '🌐' },
 ]
 
 const techStack = [
   'React', 'React Native', 'TypeScript', 'Node.js', 'Express', 'NestJS', 'ElysiaJS', 'PostgreSQL',
-  'Git', 'GitHub', 'Docker', 'Tailwind CSS', 'Next.js', 'Jenkins', 'VSCode', 'Cursor', 'Antigravity'
+  'PL/SQL', 'Git', 'GitHub', 'Docker', 'Tailwind CSS', 'Next.js', 'Jenkins', 'VSCode', 'Cursor', 'Antigravity'
 ]
 
 function About() {
@@ -55,7 +56,7 @@ function About() {
     { title: t('about.timeline_fullstack'), icon: '💻', desc: t('about.timeline_fullstack_desc') },
     { title: t('about.timeline_psychology'), icon: '🧠', desc: t('about.timeline_psychology_desc') },
     { title: t('about.timeline_signlanguage'), icon: '🤟', desc: t('about.timeline_signlanguage_desc') },
-    { title: t('about.timeline_projects'), icon: '🚀', desc: t('about.timeline_projects_desc') },
+    { title: t('about.timeline_barista'), icon: '☕', desc: t('about.timeline_barista_desc') },
     { title: t('about.timeline_freelance'), icon: '🌍', desc: t('about.timeline_freelance_desc') },
   ];
 
@@ -86,6 +87,11 @@ function About() {
           if (topics.includes('express') || name.includes('express') || desc.includes('express')) {
             langCounts['Express.js'] = (langCounts['Express.js'] || 0) + 1;
           }
+          
+          // NestJS
+          if (topics.includes('nestjs') || name.includes('nest') || desc.includes('nestjs') || desc.includes('nest')) {
+            langCounts['NestJS'] = (langCounts['NestJS'] || 0) + 1;
+          }
         }
         
         const counts = Object.values(langCounts);
@@ -93,7 +99,7 @@ function About() {
         
         const maxCount = Math.max(...counts, 1); // prevent division by zero
         
-        const desiredLangs = ['TypeScript', 'Express.js', 'JavaScript'];
+        const desiredLangs = ['TypeScript', 'Express.js', 'JavaScript', 'NestJS'];
         
         const fetchedSkills = Object.entries(langCounts)
           .filter(([name]) => desiredLangs.includes(name))
@@ -103,6 +109,7 @@ function About() {
             else if (name === 'JavaScript') icon = '🟡';
             else if (name === 'React') icon = '⚛️';
             else if (name === 'Express.js') icon = '🚂';
+            else if (name === 'NestJS') icon = '🐈';
             
             return {
               name,
@@ -112,8 +119,15 @@ function About() {
           })
           .sort((a, b) => b.level - a.level);
           
-        if (fetchedSkills.length > 0) {
-          setSkills(fetchedSkills);
+        // Merge: keep defaults that weren't found on GitHub
+        const fetchedNames = new Set(fetchedSkills.map(s => s.name));
+        const merged = [
+          ...fetchedSkills,
+          ...defaultSkills.filter(s => !fetchedNames.has(s.name))
+        ];
+        
+        if (merged.length > 0) {
+          setSkills(merged);
         }
       })
       .catch(err => console.error("Could not fetch github languages", err));
@@ -208,7 +222,6 @@ function About() {
                   <div key={skill.name} className="skill-item">
                     <div className="skill-header">
                       <span className="skill-name">{skill.icon} {skill.name}</span>
-                      <span className="skill-pct">{skill.level}%</span>
                     </div>
                     <div className="skill-bar-bg">
                       <div
@@ -249,14 +262,17 @@ function About() {
                   <div className="timeline-icon">{item.icon}</div>
                   <div className="timeline-text">
                     <div className="timeline-title">{item.title}</div>
-                    <div className="timeline-desc">
-                      <TextType 
-                        text={item.desc} 
-                        typingSpeed={30} 
-                        showCursor={true} 
-                        cursorBlinkDuration={0.8}
-                        startOnVisible={true} 
-                      />
+                    <div className="timeline-desc" style={{ position: 'relative' }}>
+                      <span className="timeline-desc-placeholder" aria-hidden="true">{item.desc}</span>
+                      <span className="timeline-desc-typed">
+                        <TextType 
+                          text={item.desc} 
+                          typingSpeed={30} 
+                          showCursor={true} 
+                          cursorBlinkDuration={0.8}
+                          startOnVisible={true} 
+                        />
+                      </span>
                     </div>
                   </div>
                 </SpotlightCard>

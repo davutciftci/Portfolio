@@ -430,6 +430,28 @@ header.header.scrolled {
     max-width: 560px;
 }
 
+/* Stable block: reserves height for the tallest language variant */
+.home-stable-block {
+    position: relative;
+}
+
+.home-stable-placeholders {
+    visibility: hidden;
+    pointer-events: none;
+    display: grid;
+}
+
+.home-stable-placeholder {
+    grid-area: 1 / 1;
+}
+
+.home-stable-visible {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
 .home-cta {
     display: flex;
     gap: 1.2rem;
@@ -780,6 +802,20 @@ header.header.scrolled {
     color: var(--text-muted);
 }
 
+.timeline-desc-placeholder {
+    visibility: hidden;
+    display: block;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.timeline-desc-typed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
 /* =============================================
    CONTACT PAGE
    ============================================= */
@@ -970,10 +1006,28 @@ a.contact-link:hover {
 }
 
 .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2.4rem;
     margin-bottom: 5rem;
+}
+
+.services-grid > * {
+    flex: 0 1 calc((100% - 2 * 2.4rem) / 3);
+    min-width: 28rem;
+}
+
+@media (max-width: 1024px) {
+    .services-grid > * {
+        flex: 0 1 calc((100% - 2.4rem) / 2);
+    }
+}
+
+@media (max-width: 640px) {
+    .services-grid > * {
+        flex: 0 1 100%;
+    }
 }
 
 .service-card {
