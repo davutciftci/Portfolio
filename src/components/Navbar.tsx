@@ -79,7 +79,7 @@ function Navbar() {
 
     return (
         <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
-            <Link to="/" className="logo" onClick={closeMenu}><span>DC</span></Link>
+            <Link to="/" className="logo" onClick={closeMenu}><span>BDC</span></Link>
 
             <div className={`bx bx-menu ${isOpen ? 'bx-x' : ''}`} id="menu-icon" onClick={toggleMenu}>
                 {isOpen ? <FaXmark aria-hidden /> : <FaBars aria-hidden />}

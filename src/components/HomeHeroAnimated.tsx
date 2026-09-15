@@ -1,41 +1,36 @@
-import BlurText from "./reactbits/TextAnimations/BlurText/BlurText"
 import TextType from "./reactbits/TextAnimations/TextType/TextType"
 import ShinyText from "./reactbits/TextAnimations/ShinyText/ShinyText"
 import { useTranslation } from "react-i18next"
 import trLocale from "../locales/tr"
 import enLocale from "../locales/en"
 
+/* Renders text as flex-wrapped inline-block spans, matching BlurText's layout */
+function PlaceholderText({ text, className }: { text: string; className?: string }) {
+  const words = text.split(' ')
+  return (
+    <p className={className} style={{ display: 'flex', flexWrap: 'wrap' }}>
+      {words.map((word, i) => (
+        <span key={i} style={{ display: 'inline-block' }}>
+          {word}
+          {i < words.length - 1 && '\u00A0'}
+        </span>
+      ))}
+    </p>
+  )
+}
+
 export default function HomeHeroAnimated() {
   const { t } = useTranslation()
 
-  const allGreetings = [trLocale.home.greeting, enLocale.home.greeting]
   const allSubtitles = [trLocale.home.subtitle, enLocale.home.subtitle]
   const allDescs = [trLocale.home.desc, enLocale.home.desc]
 
   return (
     <>
-      <div className="home-greeting home-stable-block">
-        <div className="home-stable-placeholders" aria-hidden="true">
-          {allGreetings.map((text, i) => (
-            <span key={i} className="home-h1-blur home-stable-placeholder">{text}</span>
-          ))}
-        </div>
-        <div className="home-stable-visible">
-          <BlurText
-            text={t("home.greeting")}
-            className="home-h1-blur"
-            animateBy="words"
-            direction="top"
-            delay={150}
-            stepDuration={0.5}
-          />
-        </div>
-      </div>
-
       <div className="home-subtitle home-stable-block">
         <div className="home-stable-placeholders" aria-hidden="true">
           {allSubtitles.map((text, i) => (
-            <span key={i} className="home-shiny-subtitle home-stable-placeholder">{text}</span>
+            <PlaceholderText key={i} text={text} className="home-shiny-subtitle home-stable-placeholder" />
           ))}
         </div>
         <div className="home-stable-visible">

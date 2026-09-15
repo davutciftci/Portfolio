@@ -81,7 +81,7 @@ function Home() {
             ) : (
               <Threads
                 color="#ff6a00"
-                count={15}
+                count={25}
                 speed={0.8}
                 maxDistance={150}
                 className="home-threads-desktop"

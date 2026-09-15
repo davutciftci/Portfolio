@@ -382,7 +382,6 @@ header.header.scrolled {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    display: block !important;
 }
 
 .home-subtitle {
@@ -464,8 +463,11 @@ header.header.scrolled {
     z-index: 2;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    flex-shrink: 0;
+    align-self: center;
+    justify-content: center;
+    flex: 1 1 500px;
+    min-height: 650px;
+    max-width: 650px;
 }
 
 .home-magnet {
@@ -1701,6 +1703,8 @@ a.feedo-store-btn:active .feedo-store-badge-img {
 
     .home-visual {
         width: 100%;
+        max-width: 100%;
+        min-height: 300px;
         justify-content: center;
         margin: 2rem 0 2rem; 
         display: flex;
@@ -1795,8 +1799,10 @@ a.feedo-store-btn:active .feedo-store-badge-img {
     }
 
     .home-visual {
-        display: flex; /* Changed from none to flex */
+        display: flex;
         width: 100%;
+        max-width: 100%;
+        min-height: 250px;
         justify-content: center;
         margin: 2rem 0 6rem;
     }

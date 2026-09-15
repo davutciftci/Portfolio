@@ -6,21 +6,11 @@ import enLocale from "../locales/en"
 export default function HeroStatic() {
   const { t } = useTranslation()
 
-  const allGreetings = [trLocale.home.greeting, enLocale.home.greeting]
   const allSubtitles = [trLocale.home.subtitle, enLocale.home.subtitle]
   const allDescs = [trLocale.home.desc, enLocale.home.desc]
 
   return (
     <>
-      <div className="home-greeting home-stable-block">
-        <div className="home-stable-placeholders" aria-hidden="true">
-          {allGreetings.map((text, i) => (
-            <span key={i} className="home-h1-blur home-stable-placeholder">{text}</span>
-          ))}
-        </div>
-        <h1 className="home-h1-blur home-stable-visible">{t("home.greeting")}</h1>
-      </div>
-
       <div className="home-subtitle home-stable-block">
         <div className="home-stable-placeholders" aria-hidden="true">
           {allSubtitles.map((text, i) => (
@@ -49,3 +39,4 @@ export default function HeroStatic() {
     </>
   )
 }
+
